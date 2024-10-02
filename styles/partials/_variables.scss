@@ -1,0 +1,52 @@
+// Colors
+
+$primary-black: #323232;
+$primary-gray: #afafaf;
+$primary-white: #ffffff;
+
+$secondary-black: #000000;
+$secondary-gray: #e1e1e1;
+$secondary-white: #fafafa;
+
+// Margins / Paddings
+
+$mobile-sides-padding: 1.5rem;
+$mobile-vertical-padding: 1rem;
+$mobile-before-headline: 1.5rem;
+$mobile-after-headline: 1rem;
+$mobile-btwn-components: 1rem;
+
+// Font Size
+
+$mobile-page-header-font-size: 2.25rem;
+$mobile-page-header-line-height: 2rem;
+
+$mobile-section-header-font-size: 2.25rem;
+$mobile-section-header-line-height: 2rem;
+
+$mobile-subheader-font-size: 1.3rem;
+$mobile-subheader-line-height: 2rem;
+
+$mobile-copy-font-size: 1.25rem;
+$mobile-copy-line-height: 1.85rem;
+
+$mobile-labels-font-size: 0.625rem;
+$mobile-labels-line-height: 1.25rem;
+
+// Font weights
+
+$regular-weight: 400;
+$demi: 600;
+$bold: 700;
+
+// Breakpoints
+
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+// Buttons
+
+$button-height: 2.5rem;
+$button-width-mobile: 100%;
+$button-width-tablet: 9.375rem;
+$button-sides-tablet: 2rem;

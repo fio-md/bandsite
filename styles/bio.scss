@@ -1,0 +1,54 @@
+@use "./partials/fonts" as *;
+@use "./partials/global" as *;
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+
+.hero,
+.about,
+.gallery {
+  padding: $mobile-vertical-padding $mobile-sides-padding;
+}
+.hero {
+  height: 17rem;
+  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
+    url("../assets/images/hero-bio.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  &__title {
+    color: $primary-white;
+    @include page-header;
+  }
+}
+.about__title,
+.gallery__title {
+  @include section-header;
+}
+.article {
+  &__image {
+    width: 100%;
+    margin-top: $mobile-btwn-components;
+  }
+  &__quote {
+    @include subheader;
+  }
+  &__quote-author {
+    @include subheader;
+  }
+  &__subtitle {
+    @include subheader;
+  }
+  &__content {
+    @include copy;
+  }
+}
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: $secondary-white;
+  &__photo {
+    width: 100%;
+  }
+}

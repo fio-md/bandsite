@@ -1,0 +1,58 @@
+@use "./variables" as *;
+
+@mixin tablet {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+@mixin flex-center($flex-direction) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: center;
+  align-items: center;
+}
+@mixin page-header($mobile: true) {
+  @if ($mobile) {
+    font-size: $mobile-page-header-font-size;
+    line-height: $mobile-page-header-line-height;
+    font-weight: $demi;
+  }
+}
+@mixin section-header($mobile: true) {
+  @if ($mobile) {
+    font-size: $mobile-section-header-font-size;
+    line-height: $mobile-section-header-line-height;
+    font-weight: $demi;
+    margin-top: $mobile-before-headline;
+    margin-bottom: $mobile-after-headline;
+  }
+}
+@mixin subheader($mobile: true) {
+  @if ($mobile) {
+    font-size: $mobile-subheader-font-size;
+    line-height: $mobile-subheader-line-height;
+    font-weight: $demi;
+    margin-top: $mobile-before-headline;
+    margin-bottom: $mobile-after-headline;
+  }
+}
+@mixin copy($mobile: true) {
+  @if ($mobile) {
+    font-size: $mobile-copy-font-size;
+    line-height: $mobile-copy-line-height;
+    font-weight: $regular-weight;
+    margin: $mobile-btwn-components 0;
+  }
+}
+@mixin labels($mobile: true) {
+  @if ($mobile) {
+    font-size: $mobile-labels-font-size;
+    line-height: $mobile-labels-line-height;
+    font-weight: $bold;
+  }
+}

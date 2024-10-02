@@ -1,0 +1,115 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+// Base Styles
+
+body {
+  font-family: "AvenirNextLTPro";
+  font-weight: $regular-weight;
+  color: $primary-black;
+  margin: 0;
+}
+
+// CSS reset
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+// Global elements
+
+.header,
+.footer {
+  width: 100%;
+  background-color: $primary-black;
+  color: $primary-white;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.5rem;
+  &__logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__logo {
+    width: 11rem;
+  }
+}
+.header-nav {
+  &__list {
+    display: flex;
+  }
+  &__link {
+    width: 50%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  &__link--active {
+    border-bottom: 4px solid $primary-white;
+  }
+}
+.footer {
+  padding: $mobile-vertical-padding $mobile-sides-padding;
+  display: flex;
+  flex-direction: column;
+  &__logo {
+    width: 11rem;
+    margin: $mobile-btwn-components 0;
+  }
+  &__title {
+    @include section-header;
+  }
+  &__social-icons {
+    display: flex;
+    gap: 3rem;
+  }
+  &__social-icon {
+    height: 2.25rem;
+    margin: $mobile-btwn-components 0;
+  }
+  &__contact {
+    display: flex;
+    flex-direction: column;
+  }
+  &__copyright {
+    padding-bottom: $mobile-btwn-components;
+  }
+}
+.contact {
+  &__name {
+    @include subheader;
+  }
+  &__email {
+    margin: $mobile-btwn-components 0;
+  }
+}
