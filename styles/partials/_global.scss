@@ -7,7 +7,8 @@ body {
   font-family: "AvenirNextLTPro";
   font-weight: $regular-weight;
   color: $primary-black;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 2800px;
 }
 
 // CSS reset
@@ -55,61 +56,138 @@ a {
 .header {
   display: flex;
   flex-direction: column;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
+  @include tablet {
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+    padding-top: 0;
+    padding: 0 $tablet-sides-padding;
+  }
+  @include desktop {
+    padding: 0 $desktop-sides-padding;
+  }
   &__logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
   }
   &__logo {
-    width: 11rem;
+    width: 120px;
   }
 }
 .header-nav {
-  &__list {
-    display: flex;
+  display: flex;
+  @include tablet {
+    gap: 3.5rem;
+    align-items: center;
+  }
+  @include desktop {
+    gap: 2rem;
   }
   &__link {
+    color: $secondary-gray;
     width: 50%;
     text-align: center;
-    padding: 1rem 0;
+    padding: 0.75rem 0;
+    font-size: 0.85rem;
+    &:hover {
+      color: $primary-gray;
+    }
+    @include tablet {
+      text-align: left;
+      padding: 1.5rem 0;
+    }
+    @include desktop {
+      padding: 2rem 0;
+    }
   }
   &__link--active {
-    border-bottom: 4px solid $primary-white;
+    color: $primary-white;
+    border-bottom: 3px solid $primary-white;
   }
 }
 .footer {
-  padding: $mobile-vertical-padding $mobile-sides-padding;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
+  gap: $mobile-btwn-components;
+  position: relative;
+  @include tablet {
+    padding: 2rem;
+  }
+  @include desktop {
+    padding: 2rem $desktop-sides-padding;
+  }
+  &__top-container {
+    @include tablet {
+      display: flex;
+      align-items: baseline;
+      gap: 2rem;
+    }
+  }
   &__logo {
-    width: 11rem;
+    width: 7.5rem;
     margin: $mobile-btwn-components 0;
+    @include tablet {
+      position: absolute;
+      top: 3rem;
+      right: 2rem;
+    }
+    @include desktop {
+      right: 8rem;
+    }
   }
   &__title {
     @include section-header;
+    font-weight: $regular-weight;
   }
   &__social-icons {
     display: flex;
-    gap: 3rem;
+    gap: 1.85rem;
   }
   &__social-icon {
-    height: 2.25rem;
-    margin: $mobile-btwn-components 0;
+    height: 1.5rem;
+    margin-top: $mobile-btwn-components;
+    &:hover {
+      height: 1.85rem;
+    }
   }
   &__contact {
     display: flex;
     flex-direction: column;
+    gap: $mobile-btwn-components;
+    margin-top: $mobile-sides-padding;
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      margin: $tablet-btwn-components 0;
+    }
+    @include desktop {
+      justify-content: flex-start;
+      gap: 4rem;
+    }
   }
   &__copyright {
+    font-size: 0.65rem;
+    color: $secondary-gray;
     padding-bottom: $mobile-btwn-components;
+    @include tablet {
+      font-size: 0.85rem;
+      margin-top: $tablet-btwn-components;
+    }
   }
 }
 .contact {
+  display: flex;
+  flex-direction: column;
+  gap: $mobile-btwn-components;
   &__name {
-    @include subheader;
+    @include copy;
   }
-  &__email {
-    margin: $mobile-btwn-components 0;
+  &__email,
+  &__address {
+    @include copy;
+    color: $secondary-gray;
   }
 }

@@ -6,16 +6,22 @@
 .hero,
 .about,
 .gallery {
-  padding: $mobile-vertical-padding $mobile-sides-padding;
+  @include sides-padding;
 }
 .hero {
-  height: 17rem;
+  height: 12rem;
   background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
     url("../assets/images/hero-bio.jpg");
   background-position: center;
   background-size: cover;
   display: flex;
   align-items: center;
+  @include tablet {
+    height: 28rem;
+  }
+  @include desktop {
+    height: 39rem;
+  }
   &__title {
     color: $primary-white;
     @include page-header;
@@ -26,29 +32,88 @@
   @include section-header;
 }
 .article {
+  display: flex;
+  flex-direction: column;
+  // margin: 1rem 0;
+  @include tablet {
+    margin: 2rem 4rem;
+    gap: $tablet-btwn-components;
+  }
+  &__image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    overflow: hidden;
+    @include tablet {
+      height: 20rem;
+    }
+    @include desktop {
+      height: 27rem;
+    }
+  }
   &__image {
     width: 100%;
-    margin-top: $mobile-btwn-components;
   }
   &__quote {
-    @include subheader;
+    font-size: 0.85rem;
+    line-height: 1.5rem;
+    font-weight: $demi;
+    margin: 0.5rem 0;
+    @include tablet {
+      font-size: 1.4rem;
+      line-height: 2rem;
+      font-weight: $demi;
+      margin: $tablet-btwn-components 0;
+    }
   }
   &__quote-author {
-    @include subheader;
+    font-size: 0.85rem;
+    line-height: 1.5rem;
+    font-weight: $demi;
+    @include tablet {
+      font-weight: $demi;
+    }
   }
   &__subtitle {
     @include subheader;
+  }
+  &__content-container {
+    @include tablet {
+      display: flex;
+      gap: 1rem;
+    }
   }
   &__content {
     @include copy;
   }
 }
 .gallery {
+  background: $secondary-white;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  background: $secondary-white;
+  margin-bottom: $mobile-btwn-components;
+  &__photos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
   &__photo {
+    filter: grayscale(80%);
+    transition: 0.5s;
     width: 100%;
+
+    &:hover {
+      filter: none;
+    }
+    @include tablet {
+      width: 31%;
+      flex-grow: 1;
+    }
   }
 }

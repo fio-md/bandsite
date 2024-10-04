@@ -10,28 +10,57 @@ $secondary-white: #fafafa;
 
 // Margins / Paddings
 
-$mobile-sides-padding: 1.5rem;
+$mobile-sides-padding: 1rem;
 $mobile-vertical-padding: 1rem;
-$mobile-before-headline: 1.5rem;
-$mobile-after-headline: 1rem;
+$mobile-before-headline: 1.25rem;
+$mobile-after-headline: 0.5rem;
 $mobile-btwn-components: 1rem;
 
-// Font Size
+$tablet-sides-padding: 2rem;
+$tablet-vertical-padding: 1.5rem;
+$tablet-before-headline: 1.5rem;
+$tablet-after-headline: 1rem;
+$tablet-btwn-components: 1rem;
 
-$mobile-page-header-font-size: 2.25rem;
+$desktop-sides-padding: 8rem;
+$desktop-vertical-padding: 1rem;
+$desktop-before-headline: 1.5rem;
+$desktop-after-headline: 1rem;
+$desktop-btwn-components: 1rem;
+
+// Mobile Fonts
+
+$mobile-page-header-font-size: 1.5rem;
 $mobile-page-header-line-height: 2rem;
 
-$mobile-section-header-font-size: 2.25rem;
+$mobile-section-header-font-size: 1.5rem;
 $mobile-section-header-line-height: 2rem;
 
-$mobile-subheader-font-size: 1.3rem;
-$mobile-subheader-line-height: 2rem;
+$mobile-subheader-font-size: 0.875rem;
+$mobile-subheader-line-height: 1.35rem;
 
-$mobile-copy-font-size: 1.25rem;
-$mobile-copy-line-height: 1.85rem;
+$mobile-copy-font-size: 0.8125rem;
+$mobile-copy-line-height: 1.125rem;
 
 $mobile-labels-font-size: 0.625rem;
 $mobile-labels-line-height: 1.25rem;
+
+// Tablet Fonts
+
+$tablet-page-header-font-size: 3.75rem;
+$tablet-page-header-line-height: 4.25rem;
+
+$tablet-section-header-font-size: 2.25rem;
+$tablet-section-header-line-height: 2.75rem;
+
+$tablet-subheader-font-size: 1.5rem;
+$tablet-subheader-line-height: 2rem;
+
+$tablet-copy-font-size: 0.875rem;
+$tablet-copy-line-height: 1.375rem;
+
+$tablet-labels-font-size: 0.75rem;
+$tablet-labels-line-height: 1.25rem;
 
 // Font weights
 
