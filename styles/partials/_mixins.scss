@@ -36,7 +36,6 @@
   @include tablet {
     font-size: $tablet-page-header-font-size;
     line-height: $tablet-page-header-line-height;
-    font-weight: $demi;
   }
 }
 @mixin section-header {
@@ -48,7 +47,6 @@
   @include tablet {
     font-size: $tablet-section-header-font-size;
     line-height: $tablet-section-header-line-height;
-    font-weight: $demi;
     margin-top: $tablet-before-headline;
     margin-bottom: $tablet-after-headline;
   }
@@ -62,7 +60,6 @@
   @include tablet {
     font-size: $tablet-subheader-font-size;
     line-height: $tablet-subheader-line-height;
-    font-weight: $demi;
     margin-top: $tablet-before-headline;
     margin-bottom: $tablet-after-headline;
   }
@@ -74,16 +71,19 @@
   @include tablet {
     font-size: $tablet-copy-font-size;
     line-height: $tablet-copy-line-height;
-    font-weight: $regular-weight;
   }
 }
 @mixin labels {
   font-size: $mobile-labels-font-size;
   line-height: $mobile-labels-line-height;
-  font-weight: $bold;
+  font-weight: $demi;
+  color: $primary-gray;
+  margin-bottom: 0.25rem;
   @include tablet {
     font-size: $tablet-labels-font-size;
     line-height: $tablet-labels-line-height;
-    font-weight: $bold;
   }
+}
+@mixin divider {
+  border-bottom: 1px solid $secondary-gray;
 }

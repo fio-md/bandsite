@@ -5,7 +5,8 @@
 
 .hero,
 .about,
-.gallery {
+.gallery,
+.comments {
   @include sides-padding;
 }
 .hero {
@@ -115,5 +116,60 @@
       width: 31%;
       flex-grow: 1;
     }
+  }
+}
+.comments {
+  &__title {
+    @include section-header;
+  }
+}
+.form {
+  display: flex;
+  gap: $mobile-btwn-components;
+  padding: $mobile-btwn-components 0;
+  @include divider;
+  &__main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: $mobile-btwn-components;
+  }
+  &__input-container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__input {
+    background-color: $secondary-white;
+    min-height: 2.25rem;
+    padding: 0.75rem;
+    border-radius: 4px;
+    border: 1px solid $secondary-gray;
+    &:active {
+      border: 1px solid $primary-black;
+    }
+    &::placeholder {
+      color: $secondary-black;
+    }
+  }
+  &__label {
+    text-transform: uppercase;
+    @include labels;
+  }
+  &__button {
+    text-transform: uppercase;
+  }
+}
+.avatar {
+  overflow: hidden;
+  max-height: 2.25rem;
+  max-width: 2.25rem;
+  border-radius: 50%;
+  margin-top: 1rem;
+  @include tablet {
+    height: 3rem;
+    width: 3rem;
+  }
+  &__image {
+    height: 2.3rem;
   }
 }
