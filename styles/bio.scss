@@ -93,7 +93,7 @@
   background: $secondary-white;
   display: flex;
   flex-direction: column;
-  margin-bottom: $mobile-btwn-components;
+  padding-bottom: $mobile-btwn-components;
   &__photos {
     display: flex;
     flex-direction: column;
@@ -119,19 +119,49 @@
   }
 }
 .comments {
+  background-color: $primary-white;
   &__title {
     @include section-header;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.comment {
+  flex-grow: 1;
+  padding: $mobile-btwn-components 0;
+  @include divider;
+
+  &__container {
+    display: flex;
+    gap: 1rem;
+  }
+  &__name,
+  &__date,
+  &__content {
+    @include copy;
+  }
+  &__name {
+    font-weight: $demi;
+  }
+  &__date {
+    color: $primary-gray;
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
   }
 }
 .form {
   display: flex;
   gap: $mobile-btwn-components;
-  padding: $mobile-btwn-components 0;
+  padding-bottom: $mobile-btwn-components;
   @include divider;
   &__main {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    flex-grow: 1;
     gap: $mobile-btwn-components;
   }
   &__input-container {
@@ -152,17 +182,17 @@
     }
   }
   &__label {
-    text-transform: uppercase;
     @include labels;
   }
   &__button {
-    text-transform: uppercase;
+    @include button;
   }
 }
 .avatar {
   overflow: hidden;
-  max-height: 2.25rem;
-  max-width: 2.25rem;
+  background-color: $secondary-gray;
+  height: 2.25rem;
+  width: 2.25rem;
   border-radius: 50%;
   margin-top: 1rem;
   @include tablet {

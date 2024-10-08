@@ -79,9 +79,22 @@
   font-weight: $demi;
   color: $primary-gray;
   margin-bottom: 0.25rem;
+  text-transform: uppercase;
   @include tablet {
     font-size: $tablet-labels-font-size;
     line-height: $tablet-labels-line-height;
+  }
+}
+@mixin button {
+  background-color: $primary-black;
+  color: $primary-white;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 4px;
+  text-transform: uppercase;
+  @include tablet {
+    min-width: 9.375rem;
+    padding: 0 2rem;
   }
 }
 @mixin divider {

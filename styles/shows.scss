@@ -1,0 +1,34 @@
+@use "./partials/fonts" as *;
+@use "./partials/global" as *;
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+
+.shows {
+  @include sides-padding;
+  margin-bottom: $mobile-btwn-components;
+  &__title {
+    @include section-header;
+  }
+}
+.show {
+  display: flex;
+  flex-direction: column;
+  gap: $mobile-btwn-components;
+  padding-top: $mobile-btwn-components;
+  padding-bottom: $mobile-btwn-components;
+  @include divider;
+
+  &__label {
+    display: block;
+    @include labels;
+  }
+  &__info {
+    @include copy;
+    &--main {
+      font-weight: $demi;
+    }
+  }
+  &__button {
+    @include button;
+  }
+}
