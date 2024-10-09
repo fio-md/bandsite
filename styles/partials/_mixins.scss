@@ -93,8 +93,8 @@
   border-radius: 4px;
   text-transform: uppercase;
   @include tablet {
-    min-width: 9.375rem;
-    padding: 0 2rem;
+    width: 9.375rem;
+    // padding: 0 2rem;
   }
 }
 @mixin divider {

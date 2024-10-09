@@ -78,34 +78,51 @@
     </section>
     <section class="comments">
       <h2 class="comments__title">Join the Conversation</h2>
-      <form action="" class="form">
-        <div class="avatar">
-          <img src="./assets/images/Mohan-muruge.jpg" alt="" class="avatar__image" />
-        </div>
-        <div class="form__main">
-          <div class="form__input-container">
-            <label class="form__label" for="name">Name</label>
-            <input
-              type="text"
-              class="form__input"
-              id="name"
-              placeholder="Enter your name"
-            />
+      <div class="comments__form-list">
+        <form action="" class="form">
+          <div class="avatar">
+            <img src="./assets/images/Mohan-muruge.jpg" alt="" class="avatar__image" />
           </div>
-          <div class="form__input-container">
-            <label class="form__label" for="comment">Comment</label>
-            <textarea
-              type="text"
-              class="form__input form__input--large"
-              id="comment"
-              placeholder="Add a new comment"
-              rows="4"
-            ></textarea>
+          <div class="form__main">
+            <div class="form__input-container">
+              <label class="form__label" for="name">Name</label>
+              <input
+                type="text"
+                class="form__input"
+                id="name"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div class="form__input-container">
+              <label class="form__label" for="comment">Comment</label>
+              <textarea
+                type="text"
+                class="form__input form__input--large"
+                id="comment"
+                placeholder="Add a new comment"
+                rows="4"
+              ></textarea>
+            </div>
+            <div class="form__button-container">
+              <button class="form__button">Comment</button>
+            </div>
           </div>
-          <button class="form__button">Comment</button>
-        </div>
-      </form>
-      <ul class="comments__list"></ul>
+        </form>
+        <ul class="comments__list">
+          <div class="comment__container">
+            <div class="avatar">
+              <img src="" alt="" class="avatar__image" />
+            </div>
+            <div class="comment">
+              <div class="comment__top">
+                <h3 class="comment__name">Temp Name</h3>
+                <span class="comment__date">294893284</span>
+              </div>
+              <p class="comment__content">Temp comment hello 123.</p>
+            </div>
+          </div>
+        </ul>
+      </div>
     </section>
     <footer class="footer">
       <div class="footer__top-container">

@@ -126,6 +126,19 @@
   &__list {
     display: flex;
     flex-direction: column;
+    @include tablet {
+      width: 80%;
+    }
+    @include dektop {
+      // width: 100%;
+    }
+  }
+  &__form-list {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      align-items: center;
+    }
   }
 }
 .comment {
@@ -158,6 +171,10 @@
   gap: $mobile-btwn-components;
   padding-bottom: $mobile-btwn-components;
   @include divider;
+  @include tablet {
+    gap: $tablet-btwn-components;
+    width: 80%;
+  }
   &__main {
     display: flex;
     flex-direction: column;
@@ -184,6 +201,10 @@
   &__label {
     @include labels;
   }
+  &__button-container {
+    display: flex;
+    justify-content: flex-end;
+  }
   &__button {
     @include button;
   }
@@ -201,5 +222,8 @@
   }
   &__image {
     height: 2.3rem;
+    @include tablet {
+      height: 3rem;
+    }
   }
 }

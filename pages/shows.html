@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/shows.css" />
+    <script src="../scripts/build-shows-page.js" defer></script>
     <title>Bandsite - Shows</title>
   </head>
   <body>
@@ -19,12 +20,43 @@
       </nav>
     </header>
     <section class="hero">
-      <h2 class="hero__album"></h2>
-      <h1 class="hero__song"></h1>
+      <h2 class="hero__album">Beautiful Beasts Album</h2>
+      <h1 class="hero__song">Stripes of Yellow x For The Stings</h1>
+      <iframe
+        class="hero__soundcloud"
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1754285532&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+      ></iframe>
     </section>
     <section class="shows">
       <h2 class="shows__title">Shows</h2>
-      <ul class="shows__list"></ul>
+      <ul class="shows__list">
+        <!-- <li class="show show--header">
+          <div class="show__column">Date</div>
+          <div class="show__column">Venue</div>
+          <div class="show__column">Location</div>
+          <div class="show__column"></div>
+        </li> -->
+        <!-- <li class="show show--row">
+          <div class="show__column">
+            <span class="show__label">Date</span>
+            <span class="show__info show__info--main">Temp 09 09 2024</span>
+          </div>
+          <div class="show__column">
+            <span class="show__label">Venue</span>
+            <span class="show__info">Temp Venue</span>
+          </div>
+          <div class="show__column">
+            <span class="show__label">Location</span>
+            <span class="show__info">Temp City, CA</span>
+          </div>
+          <div class="show__column">
+            <button class="show__button">Buy Tickets</button>
+          </div>
+        </li> -->
+      </ul>
     </section>
     <footer class="footer">
       <div class="footer__top-container">

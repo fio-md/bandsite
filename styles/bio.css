@@ -480,6 +480,20 @@ button {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 768px) {
+  .comments__list {
+    width: 80%;
+  }
+}
+.comments__form-list {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .comments__form-list {
+    align-items: center;
+  }
+}
 
 .comment {
   flex-grow: 1;
@@ -517,6 +531,12 @@ button {
   gap: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #e1e1e1;
+}
+@media (min-width: 768px) {
+  .form {
+    gap: 1rem;
+    width: 80%;
+  }
 }
 .form__main {
   display: flex;
@@ -558,6 +578,10 @@ button {
     line-height: 1.25rem;
   }
 }
+.form__button-container {
+  display: flex;
+  justify-content: flex-end;
+}
 .form__button {
   background-color: #323232;
   color: #ffffff;
@@ -568,7 +592,7 @@ button {
 }
 @media (min-width: 768px) {
   .form__button {
-    min-width: 9.375rem;
+    width: 9.375rem;
     padding: 0 2rem;
   }
 }
@@ -589,4 +613,9 @@ button {
 }
 .avatar__image {
   height: 2.3rem;
+}
+@media (min-width: 768px) {
+  .avatar__image {
+    height: 3rem;
+  }
 }/*# sourceMappingURL=bio.css.map */
