@@ -303,6 +303,13 @@ button {
 @media (min-width: 1280px) {
   .hero {
     height: 39rem;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__layout {
+    width: 85%;
   }
 }
 .hero__album {
@@ -353,6 +360,19 @@ button {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+@media (min-width: 1280px) {
+  .shows {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4rem;
+    padding-bottom: 2.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__list {
+    flex-grow: 1;
+  }
+}
 .shows__title {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -366,6 +386,11 @@ button {
     line-height: 2.75rem;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__title {
+    width: 15rem;
   }
 }
 
@@ -408,6 +433,11 @@ button {
 @media (min-width: 768px) {
   .show__column {
     width: 25%;
+  }
+}
+@media (min-width: 1280px) {
+  .show__column {
+    padding-left: 2rem;
   }
 }
 .show__label {

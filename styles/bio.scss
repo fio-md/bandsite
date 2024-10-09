@@ -120,18 +120,9 @@
 }
 .comments {
   background-color: $primary-white;
+  margin-bottom: $mobile-btwn-components;
   &__title {
     @include section-header;
-  }
-  &__list {
-    display: flex;
-    flex-direction: column;
-    @include tablet {
-      width: 80%;
-    }
-    @include dektop {
-      // width: 100%;
-    }
   }
   &__form-list {
     display: flex;
@@ -140,16 +131,32 @@
       align-items: center;
     }
   }
-}
-.comment {
-  flex-grow: 1;
-  padding: $mobile-btwn-components 0;
-  @include divider;
-
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   &__container {
     display: flex;
-    gap: 1rem;
+    gap: $mobile-btwn-components;
+    padding: $mobile-btwn-components 0;
+    @include divider;
+    @include tablet {
+      gap: $tablet-btwn-components;
+      width: 80%;
+    }
+    @include desktop {
+      width: 50%;
+    }
   }
+}
+.comment {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  flex-grow: 1;
+  gap: $mobile-btwn-components;
+
   &__name,
   &__date,
   &__content {
@@ -168,19 +175,9 @@
 }
 .form {
   display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   gap: $mobile-btwn-components;
-  padding-bottom: $mobile-btwn-components;
-  @include divider;
-  @include tablet {
-    gap: $tablet-btwn-components;
-    width: 80%;
-  }
-  &__main {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    gap: $mobile-btwn-components;
-  }
   &__input-container {
     display: flex;
     flex-direction: column;

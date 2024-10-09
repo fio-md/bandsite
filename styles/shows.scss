@@ -24,6 +24,13 @@
   }
   @include desktop {
     height: 39rem;
+    flex-direction: row;
+    align-items: center;
+  }
+  &__layout {
+    @include desktop {
+      width: 85%;
+    }
   }
   &__album {
     @include subheader;
@@ -48,8 +55,22 @@
 .shows {
   padding-top: $mobile-btwn-components;
   padding-bottom: $mobile-btwn-components;
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4rem;
+    padding-bottom: 2.5rem;
+  }
+  &__list {
+    @include desktop {
+      flex-grow: 1;
+    }
+  }
   &__title {
     @include section-header;
+    @include desktop {
+      width: 15rem;
+    }
   }
 }
 .show {
@@ -75,6 +96,9 @@
   &__column {
     @include tablet {
       width: 25%;
+    }
+    @include desktop {
+      padding-left: 2rem;
     }
   }
   &__label {
