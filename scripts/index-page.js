@@ -22,46 +22,83 @@ const comments = [
   },
 ];
 
-let commentListEl = document.querySelector(".comments__list");
+const commentListEl = document.querySelector(".comments__list");
 
-comments.forEach((comment) => {
-  let commentEl = newElement("li", "comments__container");
-  commentListEl.appendChild(commentEl);
-  addComment(comment, commentEl);
-});
+function loadComments() {
+  commentListEl.replaceChildren("");
 
-function newElement(type, class1, class2 = "", content = "") {
-  let newEl = document.createElement(type);
-  newEl.classList.add(class1);
-  if (class2) {
-    newEl.classList.add(class2);
-  }
-  if (content) {
-    newEl.innerHTML = content;
-  }
-  return newEl;
+  comments.forEach((comment) => {
+    const commentElement = createComment(comment);
+    commentListEl.appendChild(commentElement);
+  });
 }
-function addComment(commentObj, parent) {
-  let avatarContainer = newElement("div", "avatar");
-  parent.appendChild(avatarContainer);
 
-  let avatarImg = newElement("img", "avatar__image");
+function createComment(commentObj) {
+  const commentEl = newElement("li", "comments__container");
+
+  const avatarContainer = newElement("div", "avatar");
+  const commentContainer = newElement("div", "comment");
+  commentEl.appendChild(avatarContainer);
+  commentEl.appendChild(commentContainer);
+
+  const avatarImg = newElement("img", "avatar__image");
   if (commentObj.photoURL) {
     avatarImg.setAttribute("src", commentObj.photoURL);
   }
   avatarContainer.appendChild(avatarImg);
 
-  let commentContainer = newElement("div", "comment");
-  parent.appendChild(commentContainer);
-
-  let commentTop = newElement("div", "comment__top");
+  const commentTop = newElement("div", "comment__top");
+  const commentContent = newElement("p", "comment__content", commentObj.comment);
   commentContainer.appendChild(commentTop);
+  commentContainer.appendChild(commentContent);
 
-  let commentName = newElement("h3", "comment__name", "", commentObj.name);
+  const commentName = newElement("h3", "comment__name", commentObj.name);
+  const commentDate = newElement("span", "comment__date", commentObj.date);
   commentTop.appendChild(commentName);
-  let commentDate = newElement("span", "comment__date", "", commentObj.date);
   commentTop.appendChild(commentDate);
 
-  let commentContent = newElement("p", "comment__content", "", commentObj.comment);
-  commentContainer.appendChild(commentContent);
+  return commentEl;
 }
+
+function newElement(type, class1, content = "", class2 = "") {
+  const newEl = document.createElement(type);
+  newEl.classList.add(class1);
+  if (class2) {
+    newEl.classList.add(class2);
+  }
+  if (content) {
+    newEl.innerText = content;
+  }
+  return newEl;
+}
+
+loadComments();
+
+const formEl = document.querySelector(".form");
+
+formEl.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const commentValue = event.target.comment.value;
+  const nameValue = event.target.name.value;
+  const nameEl = document.getElementById("name");
+  const commentEl = document.getElementById("comment");
+  if (!nameValue || !commentValue) {
+    if (!nameValue) {
+      nameEl.classList.add("form__input--error");
+    }
+    if (!commentValue) {
+      commentEl.classList.add("form__input--error");
+    }
+  } else {
+    if (nameEl.classList.contains("form__input--error")) {
+      nameEl.classList.remove("form__input--error");
+    }
+    if (commentEl.classList.contains("form__input--error")) {
+      commentEl.classList.remove("form__input--error");
+    }
+    let currentDate = Date.now();
+    const newComment = { name: nameValue, date: currentDate, comment: commentValue };
+    comments.unshift(newComment);
+    loadComments();
+  }
+});

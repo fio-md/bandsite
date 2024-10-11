@@ -39,7 +39,7 @@ function newElement(type, class1, class2 = "", content = "") {
     newEl.classList.add(class2);
   }
   if (content) {
-    newEl.innerHTML = content;
+    newEl.innerText = content;
   }
   return newEl;
 }

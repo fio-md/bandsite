@@ -1,26 +1,3 @@
-@font-face {
-  font-family: "AvenirNextLTPro";
-  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf");
-  font-weight: 400;
-}
-@font-face {
-  font-family: "AvenirNextLTPro";
-  src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf");
-  font-weight: 600;
-}
-@font-face {
-  font-family: "AvenirNextLTPro";
-  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf");
-  font-weight: 700;
-}
-body {
-  font-family: "AvenirNextLTPro";
-  font-weight: 400;
-  color: #323232;
-  margin: 0 auto;
-  max-width: 2800px;
-}
-
 html {
   box-sizing: border-box;
 }
@@ -55,10 +32,35 @@ a {
 textarea,
 input {
   font-family: inherit;
+  outline: none;
+  resize: none;
 }
 
 button {
   border: none;
+}
+
+@font-face {
+  font-family: "AvenirNextLTPro";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "AvenirNextLTPro";
+  src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "AvenirNextLTPro";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf");
+  font-weight: 700;
+}
+body {
+  font-family: "AvenirNextLTPro";
+  font-weight: 400;
+  color: #323232;
+  margin: 0 auto;
+  max-width: 2800px;
 }
 
 .header,

@@ -1,3 +1,4 @@
+@use "./partials/reset" as *;
 @use "./partials/fonts" as *;
 @use "./partials/global" as *;
 @use "./partials/variables" as *;
@@ -10,18 +11,15 @@
   @include sides-padding;
 }
 .hero {
-  height: 12rem;
+  height: 58vw;
   background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
     url("../assets/images/hero-bio.jpg");
   background-position: center;
   background-size: cover;
   display: flex;
   align-items: center;
-  @include tablet {
-    height: 28rem;
-  }
   @include desktop {
-    height: 39rem;
+    height: 52vw;
   }
   &__title {
     color: $primary-white;
@@ -42,15 +40,14 @@
   }
   &__image-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 10rem;
+    height: 50vw;
     overflow: hidden;
     @include tablet {
-      height: 20rem;
+      height: 40vw;
     }
     @include desktop {
-      height: 27rem;
+      height: 35vw;
     }
   }
   &__image {
@@ -140,6 +137,7 @@
     display: flex;
     gap: $mobile-btwn-components;
     padding: $mobile-btwn-components 0;
+    width: 100%;
     @include divider;
     @include tablet {
       gap: $tablet-btwn-components;
@@ -188,11 +186,15 @@
     padding: 0.75rem;
     border-radius: 4px;
     border: 1px solid $secondary-gray;
-    &:active {
-      border: 1px solid $primary-black;
+    &:active,
+    &:focus {
+      border: 2px solid $primary-black;
     }
     &::placeholder {
       color: $secondary-black;
+    }
+    &--error {
+      border: 2px solid red;
     }
   }
   &__label {
@@ -204,6 +206,7 @@
   }
   &__button {
     @include button;
+    cursor: pointer;
   }
 }
 .avatar {

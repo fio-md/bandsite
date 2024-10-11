@@ -1,8 +1,6 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-// Base Styles
-
 body {
   font-family: "AvenirNextLTPro";
   font-weight: $regular-weight;
@@ -10,50 +8,6 @@ body {
   margin: 0 auto;
   max-width: 2800px;
 }
-
-// CSS reset
-
-html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-li {
-  padding: 0;
-  margin: 0;
-}
-ul {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-}
-textarea,
-input {
-  font-family: inherit;
-}
-button {
-  border: none;
-}
-
-// Global elements
-
 .header,
 .footer {
   width: 100%;
