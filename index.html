@@ -3,20 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/bio.css" />
-    <script src="./scripts/index-page.js" defer></script>
+    <link rel="stylesheet" href="styles/bio.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="scripts/bandsite-api.js" defer></script>
+    <script src="scripts/index-page.js" defer></script>
     <title>Bandsite - Bio</title>
   </head>
   <body>
     <header class="header">
       <a class="header__logo-container" href="/">
-        <img src="./assets/logos/Logo-bandsite.svg" alt="" class="header__logo" />
+        <img src="assets/logos/Logo-bandsite.svg" alt="" class="header__logo" />
       </a>
       <nav class="header-nav">
-        <a class="header-nav__link header-nav__link--active" href="./index.html"
+        <a class="header-nav__link header-nav__link--active" href="index.html"
           >Biography</a
         >
-        <a class="header-nav__link" href="./pages/shows.html">Shows</a>
+        <a class="header-nav__link" href="pages/shows.html">Shows</a>
       </nav>
     </header>
     <section class="hero">
@@ -27,7 +29,7 @@
       <article class="article">
         <div class="article__image-container">
           <img
-            src="./assets/images/band.jpg"
+            src="assets/images/band.jpg"
             alt="band playing live"
             class="article__image"
           />
@@ -65,15 +67,15 @@
     <section class="gallery">
       <h2 class="gallery__title">Photo Gallery</h2>
       <div class="gallery__photos">
-        <img src="./assets/images/Photo-gallery-1.jpg" alt="" class="gallery__photo" />
-        <img src="./assets/images/Photo-gallery-2.jpg" alt="" class="gallery__photo" />
-        <img src="./assets/images/Photo-gallery-3.jpg" alt="" class="gallery__photo" />
-        <img src="./assets/images/Photo-gallery-4.jpg" alt="" class="gallery__photo" />
-        <img src="./assets/images/Photo-gallery-5.jpg" alt="" class="gallery__photo" />
-        <img src="./assets/images/Photo-gallery-6.jpg" alt="" class="gallery__photo" />
-        <img src="./assets/images/Photo-gallery-7.jpg" alt="" class="gallery__photo" />
-        <img src="./assets/images/Photo-gallery-8.jpg" alt="" class="gallery__photo" />
-        <img src="./assets/images/Photo-gallery-9.jpg" alt="" class="gallery__photo" />
+        <img src="assets/images/Photo-gallery-1.jpg" alt="" class="gallery__photo" />
+        <img src="assets/images/Photo-gallery-2.jpg" alt="" class="gallery__photo" />
+        <img src="assets/images/Photo-gallery-3.jpg" alt="" class="gallery__photo" />
+        <img src="assets/images/Photo-gallery-4.jpg" alt="" class="gallery__photo" />
+        <img src="assets/images/Photo-gallery-5.jpg" alt="" class="gallery__photo" />
+        <img src="assets/images/Photo-gallery-6.jpg" alt="" class="gallery__photo" />
+        <img src="assets/images/Photo-gallery-7.jpg" alt="" class="gallery__photo" />
+        <img src="assets/images/Photo-gallery-8.jpg" alt="" class="gallery__photo" />
+        <img src="assets/images/Photo-gallery-9.jpg" alt="" class="gallery__photo" />
       </div>
     </section>
     <section class="comments">
@@ -81,7 +83,7 @@
       <div class="comments__form-list">
         <div action="" class="comments__container">
           <div class="avatar">
-            <img src="./assets/images/Mohan-muruge.jpg" alt="" class="avatar__image" />
+            <img src="assets/images/Mohan-muruge.jpg" alt="" class="avatar__image" />
           </div>
           <form class="form">
             <div class="form__input-container">
@@ -92,7 +94,6 @@
                 id="name"
                 placeholder="Enter your name"
                 name="name"
-                required
               />
             </div>
             <div class="form__input-container">
@@ -104,7 +105,6 @@
                 placeholder="Add a new comment"
                 rows="4"
                 name="comment"
-                required
               ></textarea>
             </div>
             <div class="form__button-container">
@@ -121,21 +121,15 @@
         <div class="footer__social-icons">
           <a class="footer__social-links" href="http://www.instagram.com"
             ><img
-              src="./assets/logos/Icon-instagram.svg"
+              src="assets/logos/Icon-instagram.svg"
               alt=""
               class="footer__social-icon"
           /></a>
           <a class="footer__social-links" href="http://www.facebook.com"
-            ><img
-              src="./assets/logos/Icon-facebook.svg"
-              alt=""
-              class="footer__social-icon"
+            ><img src="assets/logos/Icon-facebook.svg" alt="" class="footer__social-icon"
           /></a>
           <a class="footer__social-links" href="http://www.twitter.com"
-            ><img
-              src="./assets/logos/Icon-twitter.svg"
-              alt=""
-              class="footer__social-icon"
+            ><img src="assets/logos/Icon-twitter.svg" alt="" class="footer__social-icon"
           /></a>
         </div>
       </div>
@@ -172,7 +166,7 @@
         </div>
       </div>
       <img
-        src="./assets/logos/Logo-bandsite.svg"
+        src="assets/logos/Logo-bandsite.svg"
         alt="bandsite logo"
         class="footer__logo"
       />
