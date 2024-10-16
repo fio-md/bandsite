@@ -25,9 +25,11 @@ async function loadShows() {
 }
 
 function addShow(showObject, parent) {
+  const fullDate = new Date(showObject.date);
+  const date = String(fullDate).substring(0, 15);
   let dateCol = newElement("div", "show__column");
   let dateLabel = newElement("span", "show__label", "", "Date");
-  let dateInfo = newElement("span", "show__info", "show__info--main", showObject.date);
+  let dateInfo = newElement("span", "show__info", "show__info--main", `${date}`);
   parent.appendChild(dateCol);
   dateCol.appendChild(dateLabel);
   dateCol.appendChild(dateInfo);
@@ -48,6 +50,9 @@ function addShow(showObject, parent) {
 
   let buttonCol = newElement("div", "show__column");
   let buttonEl = newElement("button", "show__button", "", "Buy Tickets");
+  buttonEl.addEventListener("click", () => {
+    alert("Sold out!");
+  });
   parent.appendChild(buttonCol);
   buttonCol.appendChild(buttonEl);
 }

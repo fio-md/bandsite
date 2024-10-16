@@ -92,6 +92,11 @@
   width: 100%;
   border-radius: 4px;
   text-transform: uppercase;
+  transition: 0.4s;
+  &:hover {
+    background-color: $secondary-black;
+    cursor: pointer;
+  }
   @include tablet {
     width: 9.375rem;
   }

@@ -32,4 +32,24 @@ class BandSiteApi {
       console.error(error);
     }
   }
+  async likeComment(id) {
+    try {
+      const response = await axios.put(
+        `${this.baseURL}comments/${id}/like?api_key=${this.apiKey}`
+      );
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  async deleteComment(id) {
+    try {
+      const response = await axios.delete(
+        `${this.baseURL}comments/${id}?api_key=${this.apiKey}`
+      );
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
 }

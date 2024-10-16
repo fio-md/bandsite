@@ -165,10 +165,27 @@
   }
   &__date {
     color: $primary-gray;
+    padding-left: 1rem;
+    flex-grow: 1;
+  }
+  &__likes {
+    color: $primary-gray;
+    cursor: pointer;
+    &:hover {
+      color: $primary-black;
+    }
+  }
+  &__delete {
+    cursor: pointer;
+    &:hover {
+      color: red;
+    }
   }
   &__top {
     display: flex;
-    justify-content: space-between;
+  }
+  &__likes {
+    align-self: flex-start;
   }
 }
 .form {

@@ -81,6 +81,9 @@
   padding-top: $mobile-btwn-components;
   padding-bottom: $mobile-btwn-components;
   @include divider;
+  &:hover {
+    background-color: $secondary-white;
+  }
   @include tablet {
     flex-direction: row;
     align-items: center;
