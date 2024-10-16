@@ -25,9 +25,12 @@ function createComment(commentObj) {
   commentContainer.appendChild(commentTop);
   commentContainer.appendChild(commentContent);
 
+  console.log(commentObj);
   const commentName = newElement("h3", "comment__name", commentObj.name);
+  const commentLikes = newElement("span", "comment__likes", String(commentObj.likes));
   const commentDate = newElement("span", "comment__date", commentObj.timestamp);
   commentTop.appendChild(commentName);
+  commentTop.appendChild(commentLikes);
   commentTop.appendChild(commentDate);
 
   return commentEl;

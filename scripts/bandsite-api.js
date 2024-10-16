@@ -6,18 +6,30 @@ class BandSiteApi {
     this.baseURL = "https://unit-2-project-api-25c1595833b2.herokuapp.com/";
   }
   async postComment(commentObj) {
-    const response = await axios.post(
-      `${this.baseURL}comments?api_key=${this.apiKey}`,
-      commentObj
-    );
-    return response.data;
+    try {
+      const response = await axios.post(
+        `${this.baseURL}comments?api_key=${this.apiKey}`,
+        commentObj
+      );
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
   }
   async getComments() {
-    const response = await axios.get(`${this.baseURL}comments?api_key=${this.apiKey}`);
-    return response.data.sort((a, b) => b.timestamp - a.timestamp);
+    try {
+      const response = await axios.get(`${this.baseURL}comments?api_key=${this.apiKey}`);
+      return response.data.sort((a, b) => b.timestamp - a.timestamp);
+    } catch (error) {
+      console.error(error);
+    }
   }
   async getShows() {
-    const response = await axios.get(`${this.baseURL}shows?api_key=${this.apiKey}`);
-    return response.data;
+    try {
+      const response = await axios.get(`${this.baseURL}showdates?api_key=${this.apiKey}`);
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
   }
 }
