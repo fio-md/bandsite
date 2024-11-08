@@ -4,19 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/shows.css" />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="../scripts/bandsite-api.js"></script>
-    <script src="../scripts/build-shows-page.js" defer></script>
+    <script src="../built/bandsite-api.js" type="module"></script>
+    <script src="../built/build-shows-page.js" defer></script>
     <title>Bandsite - Shows</title>
   </head>
   <body>
     <header class="header">
       <a class="header__logo-container" href="/">
-        <img src="../assets/logos/Logo-bandsite.svg" alt="" class="header__logo" />
+        <img
+          src="../assets/logos/Logo-bandsite.svg"
+          alt=""
+          class="header__logo"
+        />
       </a>
       <nav class="header-nav">
         <a class="header-nav__link" href="../index.html">Biography</a>
-        <a class="header-nav__link header-nav__link--active" href="./pages/shows.html"
+        <a
+          class="header-nav__link header-nav__link--active"
+          href="./pages/shows.html"
           >Shows</a
         >
       </nav>
@@ -99,7 +104,9 @@
         alt="bandsite logo"
         class="footer__logo"
       />
-      <p class="footer__copyright">Copyright The Bees Knees © 2023 All Rights Reserved</p>
+      <p class="footer__copyright">
+        Copyright The Bees Knees © 2023 All Rights Reserved
+      </p>
     </footer>
   </body>
 </html>
