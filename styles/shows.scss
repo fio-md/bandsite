@@ -95,6 +95,9 @@
       border-bottom: none;
       padding: 0;
       display: flex;
+      &:hover {
+        background-color: $primary-white;
+      }
     }
   }
   &__column {
@@ -108,7 +111,9 @@
   &__label {
     display: block;
     @include labels;
-    margin: 0;
+    & {
+      margin: 0;
+    }
     @include tablet {
       display: none;
     }

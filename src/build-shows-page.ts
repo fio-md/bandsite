@@ -1,8 +1,8 @@
-import { BandSiteApi, myKey } from "./bandsite-api";
+import { BandSiteApi, myKey } from "./bandsite-api.ts";
 
-const listEl = document.querySelector(".shows__list");
+const listEl = document.querySelector(".shows__list")!;
 
-// create header
+// // create header
 const showsHeader = newElement("li", "show", "show--header");
 const dateHeader = newElement("div", "show__column", "", "Date");
 const venueHeader = newElement("div", "show__column", "", "Venue");
@@ -17,16 +17,23 @@ showsHeader.appendChild(buttonHeader);
 
 loadShows();
 
+type Show = {
+  date: number;
+  id: string;
+  location: string;
+  place: string;
+};
+
 async function loadShows() {
   const shows = await new BandSiteApi(myKey).getShows();
-  shows.map((show: object) => {
+  shows.map((show: Show) => {
     const showEl = newElement("li", "show", "show--row");
     listEl.appendChild(showEl);
     addShow(show, showEl);
   });
 }
 
-function addShow(showObject, parent) {
+function addShow(showObject: Show, parent: HTMLElement) {
   const fullDate = new Date(showObject.date);
   const date = String(fullDate).substring(0, 15);
   let dateCol = newElement("div", "show__column");
@@ -64,7 +71,7 @@ function addShow(showObject, parent) {
   buttonCol.appendChild(buttonEl);
 }
 
-function newElement(type, class1, class2 = "", content = "") {
+function newElement(type: string, class1: string, class2 = "", content = "") {
   let newEl = document.createElement(type);
   newEl.classList.add(class1);
   if (class2) {

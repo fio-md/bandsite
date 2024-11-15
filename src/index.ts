@@ -1,20 +1,32 @@
-import { BandSiteApi, myKey } from "./bandsite-api";
+import { BandSiteApi, myKey } from "./bandsite-api.ts";
 
-const commentListEl = <HTMLElement>document.querySelector(".comments__list");
-const formEl = <HTMLFormElement>document.querySelector(".form");
+const commentListEl = document.querySelector(".comments__list") as HTMLElement;
+const formEl = document.querySelector(".form") as HTMLFormElement;
+
+// inputs
+const nameInput = document.querySelector("#name") as HTMLInputElement;
+const commentInput = document.querySelector("#comment") as HTMLTextAreaElement;
 
 loadComments();
 
+type PostedComment = {
+  name: string;
+  comment: string;
+  id: string;
+  likes: number;
+  timestamp: number;
+};
+
 async function loadComments() {
   commentListEl.replaceChildren("");
-  const comments: Object[] = await new BandSiteApi(myKey).getComments();
-  comments.forEach((comment) => {
+  const comments: PostedComment[] = await new BandSiteApi(myKey).getComments();
+  comments.forEach((comment: PostedComment) => {
     const commentElement = createComment(comment);
     commentListEl.appendChild(commentElement);
   });
 }
 
-function createComment(commentObj) {
+function createComment(commentObj: PostedComment) {
   const commentEl = newElement("li", "comments__container");
 
   const avatarContainer = newElement("div", "avatar");
@@ -57,7 +69,12 @@ function createComment(commentObj) {
   return commentEl;
 }
 
-function newElement(type, class1, content = "", class2 = "") {
+function newElement(
+  type: string,
+  class1: string,
+  content: string = "",
+  class2: string = ""
+) {
   const newEl = document.createElement(type);
   newEl.classList.add(class1);
   if (class2) {
@@ -69,48 +86,48 @@ function newElement(type, class1, content = "", class2 = "") {
   return newEl;
 }
 
-formEl.addEventListener("submit", (event) => {
+formEl.addEventListener("submit", (event: Event) => {
   event.preventDefault();
-  const commentValue = (event.target as HTMLInputElement).comment.value;
-  const nameValue = (event.target as HTMLInputElement).name.value;
+  const comment = commentInput.value;
+  const name = nameInput.value;
 
-  // if (!nameValue || !commentValue) {
-  //   if (!nameValue) {
-  //     event.target.name.classList.add("form__input--error");
-  //   }
-  //   if (!commentValue) {
-  //     event.target.comment.classList.add("form__input--error");
-  //   }
-  // } else {
-  //   const newComment = {
-  //     name: nameValue,
-  //     comment: commentValue,
-  //   };
-  //   let errorEl = document.querySelector(".form__input--error");
-  //   if (errorEl) {
-  //     errorEl.classList.remove("form__input--error");
-  //   }
-  //   postComment(newComment);
-  // }
+  if (!name || !comment) {
+    if (!name) {
+      nameInput.classList.add("form__input--error");
+    }
+    if (!comment) {
+      commentInput.classList.add("form__input--error");
+    }
+  } else {
+    const newComment = {
+      name,
+      comment,
+    };
+    let errorEl = document.querySelector(".form__input--error");
+    if (errorEl) {
+      errorEl.classList.remove("form__input--error");
+    }
+    postComment(newComment);
+  }
 });
 
-async function postComment(comment: Object) {
+async function postComment(comment: { name: string; comment: string }) {
   await new BandSiteApi(myKey).postComment(comment);
   formEl.reset();
   loadComments();
 }
 
-async function deleteComment(id) {
+async function deleteComment(id: string) {
   await new BandSiteApi(myKey).deleteComment(id);
   loadComments();
 }
 
-async function likeComment(id) {
+async function likeComment(id: string) {
   await new BandSiteApi(myKey).likeComment(id);
   loadComments();
 }
 
-function formatDate(timestamp) {
+function formatDate(timestamp: number) {
   const currentDate = Date.now();
   const secondsAgo = (currentDate - timestamp) / 1000;
 
