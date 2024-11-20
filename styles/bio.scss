@@ -33,7 +33,6 @@
 .article {
   display: flex;
   flex-direction: column;
-  // margin: 1rem 0;
   @include tablet {
     margin: 2rem 4rem;
     gap: $tablet-btwn-components;
@@ -103,7 +102,6 @@
   }
   &__photo {
     filter: grayscale(80%);
-    transition: 0.5s;
     width: 100%;
 
     &:hover {

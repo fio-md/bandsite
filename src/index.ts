@@ -7,7 +7,8 @@ const formEl = document.querySelector(".form") as HTMLFormElement;
 const nameInput = document.querySelector("#name") as HTMLInputElement;
 const commentInput = document.querySelector("#comment") as HTMLTextAreaElement;
 
-loadComments();
+// comment posted in the last 24 hours
+let isRecent: boolean = true;
 
 type PostedComment = {
   name: string;
@@ -16,6 +17,8 @@ type PostedComment = {
   likes: number;
   timestamp: number;
 };
+
+loadComments();
 
 async function loadComments() {
   commentListEl.replaceChildren("");
@@ -55,16 +58,19 @@ function createComment(commentObj: PostedComment) {
   commentContainer.appendChild(commentContent);
   commentContainer.appendChild(commentLikes);
 
-  const formattedDate = formatDate(commentObj.timestamp);
+  const formattedDate = dynamicTimestamp(commentObj.timestamp);
   const commentName = newElement("h3", "comment__name", commentObj.name);
   const commentDate = newElement("span", "comment__date", `${formattedDate}`);
-  const commentDelete = newElement("button", "comment__delete", "x");
-  commentDelete.addEventListener("click", () => {
-    deleteComment(commentObj.id);
-  });
+
   commentTop.appendChild(commentName);
   commentTop.appendChild(commentDate);
-  commentTop.appendChild(commentDelete);
+  if (isRecent) {
+    const commentDelete = newElement("button", "comment__delete", "x");
+    commentDelete.addEventListener("click", () => {
+      deleteComment(commentObj.id);
+    });
+    commentTop.appendChild(commentDelete);
+  }
 
   return commentEl;
 }
@@ -91,6 +97,7 @@ formEl.addEventListener("submit", (event: Event) => {
   const comment = commentInput.value;
   const name = nameInput.value;
 
+  // validation
   if (!name || !comment) {
     if (!name) {
       nameInput.classList.add("form__input--error");
@@ -104,9 +111,7 @@ formEl.addEventListener("submit", (event: Event) => {
       comment,
     };
     let errorEl = document.querySelector(".form__input--error");
-    if (errorEl) {
-      errorEl.classList.remove("form__input--error");
-    }
+    errorEl?.classList.remove("form__input--error");
     postComment(newComment);
   }
 });
@@ -127,15 +132,20 @@ async function likeComment(id: string) {
   loadComments();
 }
 
-function formatDate(timestamp: number) {
+function dynamicTimestamp(timestamp: number) {
   const currentDate = Date.now();
   const secondsAgo = (currentDate - timestamp) / 1000;
+  isRecent = true;
 
+  if (secondsAgo > 7 * 24 * 3600) {
+    isRecent = false;
+    return "over a week ago";
+  }
   // more that two days
   if (secondsAgo > 2 * 24 * 3600) {
+    isRecent = false;
     return "a few days ago";
   }
-  // a day
   if (secondsAgo > 24 * 3600) {
     return "yesterday";
   }
@@ -148,7 +158,5 @@ function formatDate(timestamp: number) {
   if (secondsAgo > 60) {
     return Math.floor(secondsAgo / 60) + " minutes ago";
   }
-  if (secondsAgo < 5) {
-    return "just now";
-  }
+  return "just now";
 }
