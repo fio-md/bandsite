@@ -1,13 +1,13 @@
 # Bandsite
 
 Simple 2-page website featuring a comment section where the user can post, like, and delete comments. Designed based on mockups.
+[Live Demo](https://bandsite-ts.netlify.app/)
 
-## Technologies Used
+## Tech Stack
 
 - TypeScript: adds interactivity and dynamically renders data from API
 - Sass: styling
 - Vite: bundling TypeScript files into JavaScript
-- HTML: website structure
 
 ## Setup
 
